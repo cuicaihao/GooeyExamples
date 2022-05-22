@@ -8,8 +8,7 @@ from time import sleep
 from gooey import Gooey, GooeyParser
 
 
-@Gooey(progress_regex=r"^progress: (\d+)%$",
-       disable_stop_button=True)
+@Gooey(progress_regex=r"^progress: (\d+)%$", disable_stop_button=True)
 def main():
     parser = GooeyParser(prog="example_progress_bar_1")
     _ = parser.parse_args(sys.argv[1:])

@@ -8,13 +8,13 @@ from time import sleep
 from gooey import Gooey, GooeyParser
 
 
-@Gooey(progress_regex=r"^progress: (\d+)%$")
+@Gooey(progress_regex=r"^(Epoch ((\d+)\/(\d+)):)(.*)]$")
 def main():
     parser = GooeyParser(prog="example_progress_bar_1")
     _ = parser.parse_args(sys.argv[1:])
-
-    for i in range(100):
-        print("progress: {}%".format(i + 1))
+    totalNumber = 15
+    for i in range(totalNumber):
+        print("Epoch {}/{}:  ]".format(i + 1, totalNumber))
         sys.stdout.flush()
         sleep(0.1)
 
